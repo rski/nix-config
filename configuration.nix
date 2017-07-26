@@ -56,6 +56,9 @@
     # default applications in file manager and such
     shared_mime_info
     desktop_file_utils
+
+    # needed for qdbus to control clementine
+    qt5.qttools
   ];
 
   # TODO figure out how to set these for gtk2
