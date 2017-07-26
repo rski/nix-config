@@ -59,6 +59,9 @@
 
     # needed for qdbus to control clementine
     qt5.qttools
+
+    # nix dev
+    nix-prefetch-git
   ];
 
   # TODO figure out how to set these for gtk2
@@ -86,6 +89,14 @@
   # subject to change
   fileSystems."/data" =
   { device = "/dev/sdb3"; };
+
+  # enable trim for devices that support it
+  systemd.services.fstrim = {
+    startAt = "18:00";
+    description = "Trim SSD";
+    serviceConfig.Type = "oneshot";
+    serviceConfig.ExecStart = "${pkgs.utillinux}/bin/fstrim -a -v";
+  };
 
   users.extraUsers.rski = {
     isNormalUser = true;
