@@ -62,6 +62,8 @@
 
     # nix dev
     nix-prefetch-git
+
+    gnuplot
   ];
 
   # TODO figure out how to set these for gtk2
@@ -83,6 +85,13 @@
   # :(
   nixpkgs.config.allowUnfree = true;
   services.xserver.videoDrivers = [ "nvidia" ];
+
+  services.compton = {
+    enable = true;
+    backend = "glx";
+    vSync = "opengl-swc";
+    extraOptions = "paint-on-overlay = true;\n";
+  };
 
   hardware.pulseaudio.enable = true;
 
