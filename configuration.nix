@@ -64,8 +64,12 @@
     nix-prefetch-git
 
     gnuplot
+   (wine.override {
+      wineRelease = "staging";
+      openglSupport = true;
+      pulseaudioSupport = true;
+    })
   ];
-
   # TODO figure out how to set these for gtk2
   environment.etc."xdg/gtk-3.0/settings.ini" =
         {
@@ -85,6 +89,7 @@
   # :(
   nixpkgs.config.allowUnfree = true;
   services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.opengl.driSupport32Bit = true;
 
   services.compton = {
     enable = true;
