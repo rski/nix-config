@@ -110,6 +110,7 @@
   };
 
   hardware.pulseaudio.enable = true;
+  services.udev.extraRules = "ATTR{idVendor}==\"22b8\", ATTR{idProduct}==\"2e82\", SYMLINK+=\"libmtp\",  MODE=\"0666\", ENV{ID_MTP_DEVICE}=\"1\"\n";
 
   # subject to change
   fileSystems."/data" =
