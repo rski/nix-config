@@ -82,7 +82,7 @@
         };
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  services.xserver.layout = "uk";
+  services.xserver.layout = "gb";
 
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.windowManager.awesome.enable = true;
