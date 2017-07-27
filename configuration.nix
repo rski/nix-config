@@ -29,32 +29,46 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
+    # system
+    os-prober
+    ntfs3g
+
+    #development
     emacs
+    git
+    vim
+    gnumake
+    gnome3.gnome_terminal
+    gnuplot
+
+    #userspace
     chromium
     deluge
-    git
-    gnumake
     scrot
-    vim
-    gnome3.gnome_terminal
     pcmanfm
     hexchat
+    arc-icon-theme
+    zathura
+    unzip
+    (wine.override {
+       wineRelease = "staging";
+       openglSupport = true;
+       pulseaudioSupport = true;
+     })
+
     # pulse
     pasystray
     pulseaudioLight
     pavucontrol
+
     # AV
     clementine
     smplayer
     mpv
 
-    arc-icon-theme
     # thumbnails
     xfce.tumbler
     ffmpegthumbnailer
-
-    zathura
-    unzip
 
     # default applications in file manager and such
     shared_mime_info
@@ -66,12 +80,6 @@
     # nix dev
     nix-prefetch-git
 
-    gnuplot
-   (wine.override {
-      wineRelease = "staging";
-      openglSupport = true;
-      pulseaudioSupport = true;
-    })
   ];
   # TODO figure out how to set these for gtk2
   environment.etc."xdg/gtk-3.0/settings.ini" =
