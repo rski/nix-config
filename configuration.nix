@@ -32,6 +32,9 @@
     # system
     os-prober
     ntfs3g
+    xlibs.xmodmap
+    libmtp
+    gvfs
 
     #development
     emacs
@@ -55,6 +58,7 @@
        openglSupport = true;
        pulseaudioSupport = true;
      })
+    gimp
 
     # pulse
     pasystray
@@ -100,7 +104,9 @@
   # :(
   nixpkgs.config.allowUnfree = true;
   services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.desktopManager.xfce.enable = true;
   hardware.opengl.driSupport32Bit = true;
+  services.udisks2.enable = true;
 
   services.compton = {
     enable = true;
