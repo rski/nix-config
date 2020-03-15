@@ -50,6 +50,7 @@
     throttled
     scrot
     vim
+    gnumake
 
 
     networkmanager
