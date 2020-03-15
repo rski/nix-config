@@ -94,6 +94,7 @@
         '';
     };
 
+  programs.fish.enable = true;
   users.users.eldritch = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
@@ -101,6 +102,7 @@
   users.users.rski = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
+    shell = pkgs.fish;
   };
 
   # This value determines the NixOS release with which your system is to be
