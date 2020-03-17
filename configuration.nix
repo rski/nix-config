@@ -55,6 +55,8 @@
 
     networkmanager
 
+    tdesktop
+
 
     arc-icon-theme
     gnome3.gnome_terminal
