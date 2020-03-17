@@ -38,34 +38,27 @@
   # $ nix search wget
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
+    arc-icon-theme
     cbatticon
     compton
+    desktop_file_utils
     emacs
+    fish
     git
+    gnome3.gnome_terminal
+    gnumake
     go
     hexchat
+    networkmanager
     pcmanfm
     python3
-    spotify
-    throttled
     scrot
-    vim
-    gnumake
-
-
-    networkmanager
-
-    tdesktop
-
-
-    arc-icon-theme
-    gnome3.gnome_terminal
-
     shared_mime_info
-    desktop_file_utils
-
+    spotify
+    tdesktop
+    throttled
+    vim
     zsh
-    fish
   ];
 
 
