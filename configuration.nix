@@ -71,7 +71,14 @@
 
   # Enable sound.
   sound.enable = true;
-  hardware.pulseaudio.enable = true;
+  hardware.pulseaudio = {
+    enable = true;
+    # this is the pulseaudio build with bluetooth support
+    package = pkgs.pulseaudioFull;
+  };
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
+
 
   services.xserver.enable = true;
   services.xserver.layout = "us";
