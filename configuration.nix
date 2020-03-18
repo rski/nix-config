@@ -50,6 +50,8 @@
     go
     hexchat
     networkmanager
+    networkmanagerapplet
+    networkmanager_vpnc
     pcmanfm
     python3
     scrot
@@ -96,7 +98,7 @@
   };
   users.users.rski = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "networkmanager" ];
     shell = pkgs.fish;
   };
 
