@@ -44,11 +44,13 @@
     desktop_file_utils
     emacs
     fish
+    gcc
     git
     gnome3.gnome_terminal
     gnumake
     go
     hexchat
+    htop
     networkmanager
     networkmanagerapplet
     networkmanager_vpnc
