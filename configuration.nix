@@ -55,9 +55,10 @@
     go
     hexchat
     htop
+    keychain
     networkmanager
-    networkmanagerapplet
     networkmanager_vpnc
+    networkmanagerapplet
     pasystray
     pavucontrol
     pcmanfm
