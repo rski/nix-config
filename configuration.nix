@@ -38,6 +38,7 @@
   # $ nix search wget
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
+    alacritty
     arc-icon-theme
     cbatticon
     compton
