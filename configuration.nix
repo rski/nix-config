@@ -68,6 +68,7 @@
     tdesktop
     throttled
     vim
+    zathura
     zsh
   ];
 
