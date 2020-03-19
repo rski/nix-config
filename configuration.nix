@@ -44,6 +44,7 @@
     desktop_file_utils
     emacs
     fish
+    fzf
     gcc
     git
     gnome3.gnome_terminal
@@ -56,6 +57,7 @@
     networkmanager_vpnc
     pcmanfm
     python3
+    ripgrep
     scrot
     shared_mime_info
     spotify
