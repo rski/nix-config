@@ -91,8 +91,8 @@
   # Enable touchpad support.
   services.xserver.libinput.enable = true;
 
-  services.xserver.windowManager.xmonad.enable = true;
   services.xserver.windowManager.awesome.enable = true;
+  services.xserver.desktopManager.xterm.enable = false;
 
   environment.etc."xdg/gtk-3.0/settings.ini" =
     {
