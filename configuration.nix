@@ -55,6 +55,8 @@
     networkmanager
     networkmanagerapplet
     networkmanager_vpnc
+    pasystray
+    pavucontrol
     pcmanfm
     python3
     ripgrep
