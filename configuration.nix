@@ -47,6 +47,8 @@
     fzf
     gcc
     git
+    gnome3.cheese
+    gnome3.eog
     gnome3.gnome_terminal
     gnumake
     go
