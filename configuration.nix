@@ -90,8 +90,8 @@
 
 
   services.xserver.enable = true;
-  services.xserver.layout = "us";
-  # services.xserver.xkbOptions = "eurosign:e";
+  services.xserver.layout = "gb,el";
+  services.xserver.xkbOptions = "ctrl:nocaps, grp:rctrl_toggle";
 
   # Enable touchpad support.
   services.xserver.libinput.enable = true;
