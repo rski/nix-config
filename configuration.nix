@@ -39,6 +39,7 @@
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     alacritty
+    arandr
     arc-icon-theme
     cbatticon
     compton
@@ -56,6 +57,7 @@
     hexchat
     htop
     keychain
+    mosh
     networkmanager
     networkmanager_vpnc
     networkmanagerapplet
