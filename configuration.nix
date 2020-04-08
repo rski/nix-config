@@ -118,7 +118,7 @@
   };
   users.users.rski = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [ "wheel" "networkmanager" "docker" ];
     shell = pkgs.fish;
   };
 
@@ -129,5 +129,6 @@
   system.stateVersion = "19.09"; # Did you read the comment?
   users.users.root.initialHashedPassword = "";
 
+  virtualisation.docker.enable = true;
 }
 
