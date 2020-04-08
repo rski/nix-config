@@ -42,8 +42,10 @@
     arandr
     arc-icon-theme
     cbatticon
+    clementine
     compton
     desktop_file_utils
+    dnsutils
     emacs
     fish
     fzf
@@ -54,8 +56,11 @@
     gnome3.gnome_terminal
     gnumake
     go
+    gnupg
+    graphviz
     hexchat
     htop
+    i3lock
     keychain
     mosh
     networkmanager
