@@ -122,7 +122,7 @@
     extraGroups = [ "wheel" "networkmanager" "docker" ];
     shell = pkgs.fish;
   };
-  users.mutableUsers = false;
+  users.mutableUsers = true;
 
   # This value determines the NixOS release with which your system is to be
   # compatible, in order to avoid breaking some software such as database
