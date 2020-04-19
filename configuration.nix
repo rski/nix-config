@@ -42,6 +42,8 @@
     arandr
     arc-icon-theme
     cbatticon
+    clang
+    clang-tools
     clementine
     compton
     desktop_file_utils
