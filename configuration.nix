@@ -73,6 +73,7 @@
     pasystray
     pavucontrol
     pcmanfm
+    python27Packages.pylint
     python3
     ripgrep
     scrot
