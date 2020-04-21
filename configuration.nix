@@ -70,6 +70,7 @@
     networkmanager
     networkmanager_vpnc
     networkmanagerapplet
+    ntfs3g
     pasystray
     pavucontrol
     pcmanfm
@@ -84,6 +85,8 @@
     vim
     zathura
     zsh
+
+    gvfs
   ];
 
 
@@ -143,6 +146,7 @@
   system.stateVersion = "19.09"; # Did you read the comment?
   users.users.root.initialHashedPassword = "";
 
+  services.udisks2.enable = true;
   virtualisation.docker.enable = true;
+  boot.supportedFilesystems = [ "ntfs" ];
 }
-
