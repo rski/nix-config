@@ -39,6 +39,7 @@
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     alacritty
+    ansible
     arandr
     arc-icon-theme
     cbatticon
