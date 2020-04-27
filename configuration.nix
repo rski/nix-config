@@ -124,8 +124,7 @@
         '';
     };
 
-  # XXX gonna need this in 20.03:
-  # environment.homeBinInPath = true;
+  environment.homeBinInPath = true;
   environment.variables = {
     ALTERNATE_EDITOR = "";
     PATH = "$HOME/bin/go";
