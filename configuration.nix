@@ -50,7 +50,9 @@
     desktop_file_utils
     dnsutils
     emacs
+    fd
     fish
+    firefox
     fzf
     gcc
     gimp
@@ -66,12 +68,15 @@
     hexchat
     htop
     i3lock
+    jq
     keychain
+    kubectl
     mosh
     networkmanager
     networkmanager_vpnc
     networkmanagerapplet
     ntfs3g
+    openssl
     pasystray
     pavucontrol
     pcmanfm
@@ -83,6 +88,7 @@
     spotify
     tdesktop
     throttled
+    thunderbird
     vim
     zathura
     zsh
