@@ -10,7 +10,6 @@
       name = "all";
       paths = [
         caffeine-ng
-        clang-tools
         colordiff
         lsof
         multimarkdown
@@ -20,6 +19,7 @@
         vscode
 
         networking
+        proglangs
       ];
     };
     networking = pkgs.buildEnv {
@@ -29,6 +29,19 @@
         sshpass
         traceroute
         wget
+      ];
+    };
+    proglangs = pkgs.buildEnv {
+      name = "proglangs";
+      paths = [
+        clang-tools
+        gcc
+        go
+        python27Packages.pylint
+        python2
+        python3
+
+        rustup
       ];
     };
     myemacs = pkgs.buildEnv {

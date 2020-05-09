@@ -43,8 +43,6 @@
     arandr
     arc-icon-theme
     cbatticon
-    clang
-    clang-tools
     clementine
     compton
     desktop_file_utils
@@ -53,14 +51,12 @@
     fish
     firefox
     fzf
-    gcc
     gimp
     git
     gnome3.cheese
     gnome3.eog
     gnome3.gnome_terminal
     gnumake
-    go
     google-chrome
     gnupg
     graphviz
@@ -91,11 +87,7 @@
     vim
     zathura
     zsh
-
     gvfs
-
-    cargo
-    rustup
   ];
 
 
