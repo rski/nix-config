@@ -1,7 +1,7 @@
 {
   allowUnfree = true;
   packageOverrides = pkgs: with pkgs; rec {
-    _emacs = pkgs.emacs.overrideAttrs (oldAttrs: rec {
+    myemacs = pkgs.emacs.overrideAttrs (oldAttrs: rec {
       configureFlags = (oldAttrs.configureFlags or []) ++ [
         "--program-transform-name=s/^ctags/ctags.emacs/"
       ];
@@ -21,6 +21,7 @@
         networking
         proglangs
         tools
+        editors
       ];
     };
     networking = pkgs.buildEnv {
@@ -64,9 +65,14 @@
         scrot
       ];
     };
-    myemacs = pkgs.buildEnv {
-      name = "myemacs";
-      paths = [ _emacs ];
+    editors = pkgs.buildEnv {
+      name = "editors";
+      paths = [
+        myemacs
+        vim
+        neovim
+        vscode
+      ];
     };
   };
 }

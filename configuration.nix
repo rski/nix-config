@@ -68,7 +68,6 @@
     tdesktop
     throttled
     thunderbird
-    vim
     zathura
     zsh
     gvfs
