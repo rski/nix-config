@@ -46,7 +46,6 @@
     clementine
     compton
     desktop_file_utils
-    dnsutils
     fish
     firefox
     gimp

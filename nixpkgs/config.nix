@@ -27,6 +27,7 @@
     networking = pkgs.buildEnv {
       name = "networking";
       paths = [
+        dnsutils
         mtr
         sshpass
         traceroute
