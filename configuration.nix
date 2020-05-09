@@ -40,28 +40,17 @@
   environment.systemPackages = with pkgs; [
     alacritty
     ansible
-    arandr
-    arc-icon-theme
-    cbatticon
-    clementine
-    compton
     desktop_file_utils
     fish
     firefox
-    gimp
-    gnome3.cheese
-    gnome3.eog
-    gnome3.gnome_terminal
     google-chrome
     gnupg
     graphviz
     hexchat
-    i3lock
     networkmanager
     networkmanager_vpnc
     networkmanagerapplet
     ntfs3g
-    pcmanfm
     shared_mime_info
     spotify
     tdesktop

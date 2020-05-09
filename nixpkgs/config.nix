@@ -22,6 +22,7 @@
         proglangs
         tools
         editors
+        de
       ];
     };
     networking = pkgs.buildEnv {
@@ -73,6 +74,25 @@
         vim
         neovim
         vscode
+      ];
+    };
+    de = pkgs.buildEnv {
+      name = "de";
+      paths = [
+        arandr
+        arc-icon-theme
+        cbatticon
+        clementine
+        compton
+        gimp
+        gnome3.cheese
+        gnome3.eog
+        gnome3.gnome_terminal
+        i3lock
+        pcmanfm
+        spotify
+        tdesktop
+        zathura
       ];
     };
   };
