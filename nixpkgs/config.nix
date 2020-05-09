@@ -1,7 +1,7 @@
 {
   allowUnfree = true;
   packageOverrides = pkgs: with pkgs; rec {
-    myemacs =  (pkgs.emacs.override { srcRepo = true; }).overrideAttrs(oldAttrs: {
+    _emacs = (pkgs.emacs.override { srcRepo = true; }).overrideAttrs(oldAttrs: {
       configureFlags = (oldAttrs.configureFlags or []) ++ [
         "--program-transform-name=s/^ctags/ctags.emacs/"
       ];
@@ -77,10 +77,15 @@
     editors = pkgs.buildEnv {
       name = "editors";
       paths = [
-        myemacs
         vim
         neovim
         vscode
+      ];
+    };
+    myemacs = pkgs.buildEnv {
+      name = "myemacs";
+      paths = [
+        _emacs
       ];
     };
     de = pkgs.buildEnv {
