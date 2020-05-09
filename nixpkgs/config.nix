@@ -20,6 +20,7 @@
 
         networking
         proglangs
+        tools
       ];
     };
     networking = pkgs.buildEnv {
@@ -42,6 +43,25 @@
         python3
 
         rustup
+      ];
+    };
+    tools = pkgs.buildEnv {
+      name = "tools";
+      paths = [
+        fd
+        fzf
+        git
+        gnumake
+        htop
+        jq
+        keychain
+        kubectl
+        mosh
+        openssl
+        pasystray
+        pavucontrol
+        ripgrep
+        scrot
       ];
     };
     myemacs = pkgs.buildEnv {

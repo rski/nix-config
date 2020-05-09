@@ -47,38 +47,22 @@
     compton
     desktop_file_utils
     dnsutils
-    fd
     fish
     firefox
-    fzf
     gimp
-    git
     gnome3.cheese
     gnome3.eog
     gnome3.gnome_terminal
-    gnumake
     google-chrome
     gnupg
     graphviz
     hexchat
-    htop
     i3lock
-    jq
-    keychain
-    kubectl
-    mosh
     networkmanager
     networkmanager_vpnc
     networkmanagerapplet
     ntfs3g
-    openssl
-    pasystray
-    pavucontrol
     pcmanfm
-    python27Packages.pylint
-    python3
-    ripgrep
-    scrot
     shared_mime_info
     spotify
     tdesktop
