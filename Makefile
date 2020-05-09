@@ -1,4 +1,4 @@
-.PHONY: all install
+.PHONY: all install install-user
 
 all:
 	sudo nixos-rebuild switch
@@ -6,3 +6,7 @@ all:
 install:
 	sudo ln -sf `pwd`/configuration.nix /etc/nixos/configuration.nix
 	sudo ln -sf `pwd`/hardware-configuration.nix /etc/nixos/hardware-configuration.nix
+
+install-user:
+	mkdir -p ~/.config/nixpkgs
+	ln -sf `pwd`/nixpkgs/config.nix ~/.config/nixpkgs

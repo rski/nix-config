@@ -49,7 +49,6 @@
     compton
     desktop_file_utils
     dnsutils
-    emacs
     fd
     fish
     firefox
@@ -94,6 +93,9 @@
     zsh
 
     gvfs
+
+    cargo
+    rustup
   ];
 
 
