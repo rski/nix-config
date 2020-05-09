@@ -1,10 +1,17 @@
 {
   allowUnfree = true;
   packageOverrides = pkgs: with pkgs; rec {
-    myemacs = pkgs.emacs.overrideAttrs (oldAttrs: rec {
+    myemacs =  (pkgs.emacs.override { srcRepo = true; }).overrideAttrs(oldAttrs: {
       configureFlags = (oldAttrs.configureFlags or []) ++ [
         "--program-transform-name=s/^ctags/ctags.emacs/"
       ];
+      buildInputs = oldAttrs.buildInputs ++ [
+        jansson harfbuzz git
+      ];
+      srcRepo = true;
+      src = ~/Code/emacs;
+      patches = [];
+      postPatch = "";
     });
     all = pkgs.buildEnv {
       name = "all";
