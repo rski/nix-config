@@ -9,7 +9,10 @@
         jansson harfbuzz git
       ];
       srcRepo = true;
-      src = ~/Code/emacs;
+      src = fetchGit {
+        url = "https://github.com/emacs-mirror/emacs";
+        ref = "emacs-27.0.91";
+      };
       patches = [];
       postPatch = "";
     });
