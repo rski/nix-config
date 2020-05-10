@@ -52,11 +52,10 @@
     networkmanagerapplet
     ntfs3g
     shared_mime_info
-    spotify
-    tdesktop
+
     throttled
     thunderbird
-    zathura
+
     zsh
     gvfs
   ];
