@@ -99,7 +99,7 @@
   environment.homeBinInPath = true;
   environment.variables = {
     ALTERNATE_EDITOR = "";
-    PATH = "$HOME/bin/go";
+    PATH = "$HOME/go/bin";
   };
 
   programs.fish.enable = true;
