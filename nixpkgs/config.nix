@@ -22,11 +22,10 @@
         caffeine-ng
         colordiff
         lsof
+        loc
         multimarkdown
-        neovim
         unzip
         vlc
-        vscode
 
         networking
         proglangs
@@ -48,6 +47,7 @@
     proglangs = pkgs.buildEnv {
       name = "proglangs";
       paths = [
+        maven3
         clang-tools
         gcc
         go
@@ -98,15 +98,17 @@
         arc-icon-theme
         cbatticon
         clementine
-        compton
+        discord
         gimp
         gnome3.cheese
         gnome3.eog
-        gnome3.gnome_terminal
         i3lock
+        lshw
         pcmanfm
+        picom
         spotify
         tdesktop
+        thunderbird
         zathura
       ];
     };
