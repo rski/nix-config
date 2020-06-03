@@ -116,6 +116,9 @@
   system.stateVersion = "19.09"; # Did you read the comment?
   users.users.root.initialHashedPassword = "";
 
+  nix.gc.automatic = true;
+  nix.gc.dates = "12:15";
+
   services.udisks2.enable = true;
   virtualisation.docker.enable = true;
   boot.supportedFilesystems = [ "ntfs" ];
