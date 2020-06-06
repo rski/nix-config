@@ -66,6 +66,9 @@
         git
         gnumake
         htop
+        hunspell
+        iotop
+        ispell
         jq
         keychain
         kubectl
@@ -73,8 +76,12 @@
         openssl
         pasystray
         pavucontrol
+        protobuf
         ripgrep
         scrot
+        shellcheck
+        sysstat
+        tree
       ];
     };
     editors = pkgs.buildEnv {
@@ -99,6 +106,7 @@
         cbatticon
         clementine
         discord
+        firefox
         gimp
         gnome3.cheese
         gnome3.eog
