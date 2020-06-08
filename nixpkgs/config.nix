@@ -89,7 +89,6 @@
       paths = [
         vim
         neovim
-        vscode
       ];
     };
     myemacs = pkgs.buildEnv {
