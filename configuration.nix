@@ -64,6 +64,7 @@
   networking.networkmanager.enable = true;
   services.throttled.enable = true;
 
+  programs.java.enable = true;
   # Enable sound.
   sound.enable = true;
   hardware.pulseaudio = {
