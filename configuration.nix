@@ -99,6 +99,8 @@
   environment.variables = {
     ALTERNATE_EDITOR = "";
     PATH = "$HOME/go/bin";
+    # no idea why this is on by default
+    CGO_ENABLED = "0";
   };
 
   programs.fish.enable = true;
