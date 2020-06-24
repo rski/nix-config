@@ -51,18 +51,21 @@
         clang-tools
         gcc
         go
+        groovy
+
+        mypy
         python27Packages.pylint
         python2
         python3
 
         rustup
         python27Packages.python-language-server
-
       ];
     };
     tools = pkgs.buildEnv {
       name = "tools";
       paths = [
+        bat
         fd
         fzf
         git
@@ -70,6 +73,7 @@
         htop
         hunspell
         iotop
+        intel-gpu-tools
         ispell
         jq
         keychain
