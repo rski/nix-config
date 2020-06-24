@@ -59,7 +59,6 @@
         python3
 
         rustup
-        python27Packages.python-language-server
       ];
     };
     tools = pkgs.buildEnv {
