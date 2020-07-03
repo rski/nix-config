@@ -69,10 +69,15 @@
   sound.enable = true;
   hardware.pulseaudio = {
     enable = true;
+    extraModules = [ pkgs.pulseaudio-modules-bt ];
     # this is the pulseaudio build with bluetooth support
     package = pkgs.pulseaudioFull;
   };
   hardware.bluetooth.enable = true;
+  hardware.bluetooth.extraConfig = "
+    [General]
+    Enable=Source,Sink,Media,Socket
+    ";
   services.blueman.enable = true;
 
 
