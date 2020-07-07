@@ -116,6 +116,7 @@
         gnome3.eog
         i3lock
         lshw
+        lxqt.lxqt-notificationd
         pcmanfm
         picom
         spotify
