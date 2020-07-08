@@ -109,6 +109,8 @@
     CGO_ENABLED = "0";
   };
 
+  programs.geary.enable = true;
+  services.gnome3.gnome-keyring.enable = true;
   programs.fish.enable = true;
   users.users.rski = {
     isNormalUser = true;
