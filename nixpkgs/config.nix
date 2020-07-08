@@ -119,6 +119,7 @@
         lxqt.lxqt-notificationd
         pcmanfm
         picom
+        screenkey
         spotify
         tdesktop
         thunderbird
