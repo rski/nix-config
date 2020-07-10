@@ -58,7 +58,7 @@
         python2
         python3
 
-        rustup
+        cargo
       ];
     };
     tools = pkgs.buildEnv {
