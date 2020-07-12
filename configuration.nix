@@ -39,10 +39,8 @@
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     alacritty
-    ansible
     desktop_file_utils
     fish
-    firefox
     google-chrome
     gnupg
     graphviz
@@ -52,10 +50,7 @@
     networkmanagerapplet
     ntfs3g
     shared_mime_info
-
     throttled
-    thunderbird
-
     zsh
     gvfs
   ];
