@@ -41,9 +41,10 @@
     alacritty
     desktop_file_utils
     fish
-    google-chrome
     gnupg
+    google-chrome
     graphviz
+    gvfs
     hexchat
     networkmanager
     networkmanager_vpnc
@@ -52,7 +53,6 @@
     shared_mime_info
     throttled
     zsh
-    gvfs
   ];
 
 
