@@ -8,6 +8,7 @@
   boot.initrd.availableKernelModules = [ "nvme" "usb_storage" ];
   boot.initrd.kernelModules = [ "dm-snapshot" ];
   boot.kernelModules = [ "kvm-intel" ];
+  boot.kernelPackages = pkgs.linuxPackages_5_7;
   boot.extraModulePackages = [ ];
 
   boot.initrd.luks.devices.crypted.device = "/dev/disk/by-uuid/387ccc52-0b22-45c8-b959-ea91043765d9";
