@@ -125,4 +125,6 @@
   services.udisks2.enable = true;
   virtualisation.docker.enable = true;
   boot.supportedFilesystems = [ "ntfs" ];
+
+  services.earlyoom.enable = true;
 }
