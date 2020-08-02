@@ -46,6 +46,7 @@
     graphviz
     gvfs
     hexchat
+    home-manager
     networkmanager
     networkmanager_vpnc
     networkmanagerapplet
