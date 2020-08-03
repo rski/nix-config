@@ -60,8 +60,10 @@ in
         python27Packages.pylint
         python2
         python3
+	python-language-server
 
         cargo
+	rust-analyzer
       ];
     };
     tools = pkgs.buildEnv {
