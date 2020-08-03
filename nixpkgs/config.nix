@@ -1,6 +1,9 @@
+let
+  unstable = import (fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/a06fda4c5d9d13b3aa7245ae885b2047482ecf4f.tar.gz) {};
+in
 {
   allowUnfree = true;
-  packageOverrides = pkgs: with pkgs; rec {
+  packageOverrides = pkgs: with unstable; rec {
     _emacs = (pkgs.emacs.override { srcRepo = true; }).overrideAttrs(oldAttrs: {
       configureFlags = (oldAttrs.configureFlags or []) ++ [
         "--program-transform-name=s/^ctags/ctags.emacs/"
