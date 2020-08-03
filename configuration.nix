@@ -4,6 +4,9 @@
 
 { config, pkgs, ... }:
 
+let
+  unstable = import (fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/a06fda4c5d9d13b3aa7245ae885b2047482ecf4f.tar.gz) {};
+in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -40,7 +43,6 @@
   environment.systemPackages = with pkgs; [
     alacritty
     desktop_file_utils
-    fish
     gnupg
     google-chrome
     graphviz
@@ -103,11 +105,10 @@
 
   programs.geary.enable = true;
   services.gnome3.gnome-keyring.enable = true;
-  programs.fish.enable = true;
   users.users.rski = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "docker" ];
-    shell = pkgs.fish;
+    shell = unstable.fish;
   };
   users.mutableUsers = true;
   nix.trustedUsers = [ "root" "rski" ];
