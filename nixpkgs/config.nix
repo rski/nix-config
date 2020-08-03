@@ -65,12 +65,14 @@
       name = "tools";
       paths = [
         bat
+        bandwhich
         fd
         fzf
         git
         gnumake
         htop
         hunspell
+        hyperfine
         iotop
         intel-gpu-tools
         ispell
