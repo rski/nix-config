@@ -22,7 +22,6 @@ in
     all = pkgs.buildEnv {
       name = "all";
       paths = [
-        caffeine-ng
         colordiff
         lsof
         loc
@@ -114,6 +113,7 @@ in
       paths = [
         arandr
         arc-icon-theme
+        caffeine-ng
         cbatticon
         clementine
         discord
