@@ -22,13 +22,6 @@ in
     all = pkgs.buildEnv {
       name = "all";
       paths = [
-        colordiff
-        lsof
-        loc
-        multimarkdown
-        unzip
-        vlc
-
         networking
         proglangs
         tools
@@ -68,8 +61,9 @@ in
     tools = pkgs.buildEnv {
       name = "tools";
       paths = [
-        bat
         bandwhich
+        bat
+        colordiff
         fd
         fzf
         git
@@ -78,21 +72,21 @@ in
         hunspell
         hyperfine
         iotop
-        intel-gpu-tools
         ispell
         jq
         keychain
         kubectl
+        loc
+        lsof
         mosh
+        multimarkdown
         openssl
-        pasystray
-        pavucontrol
         protobuf
         ripgrep
-        scrot
         shellcheck
         sysstat
         tree
+        unzip
       ];
     };
     editors = pkgs.buildEnv {
@@ -122,14 +116,19 @@ in
         gnome3.cheese
         gnome3.eog
         i3lock
+        intel-gpu-tools
         lshw
         lxqt.lxqt-notificationd
+        pasystray
+        pavucontrol
         pcmanfm
         picom
         screenkey
+        scrot
         spotify
         tdesktop
         thunderbird
+        vlc
         zathura
       ];
     };
