@@ -98,6 +98,7 @@ in
   environment.homeBinInPath = true;
   environment.variables = {
     ALTERNATE_EDITOR = "";
+    EDITOR = "nvim";
     PATH = "$HOME/go/bin";
     # no idea why this is on by default
     CGO_ENABLED = "0";
