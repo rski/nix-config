@@ -1,5 +1,5 @@
 let
-  unstable = import (fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/a06fda4c5d9d13b3aa7245ae885b2047482ecf4f.tar.gz) {};
+  unstable = import (fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/8ae7f8c35998a857f57512ecb7f0fa318ca88463.tar.gz) {};
 in
 {
   allowUnfree = true;
