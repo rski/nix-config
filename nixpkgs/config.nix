@@ -14,7 +14,7 @@ in
       srcRepo = true;
       src = fetchGit {
         url = "https://github.com/emacs-mirror/emacs";
-        ref = "emacs-27.0.91";
+        ref = "emacs-27.1";
       };
       patches = [];
       postPatch = "";
