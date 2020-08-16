@@ -61,10 +61,7 @@
     zsh
   ];
 
-  programs = {
-    java.enable = true;
-    geary.enable = true;
-  };
+  programs.java.enable = true;
 
   # Enable sound.
   sound.enable = true;
