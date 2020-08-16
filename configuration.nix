@@ -5,24 +5,30 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  # Include the results of the hardware scan.
+  imports = [ ./hardware-configuration.nix ];
 
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot= { 
+    # Use the systemd-boot EFI boot loader.
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+    supportedFilesystems = [ "ntfs" ];
+  };
 
-  networking.hostName = "belauensis";
+  networking = {
+    hostName ="belauensis";
+    # The global useDHCP flag is deprecated, therefore explicitly set to false here.
+    # Per-interface useDHCP will be mandatory in the future, so this generated config
+    # replicates the default behaviour.
+    useDHCP = false;
+    interfaces.enp0s31f6.useDHCP = true;
+    interfaces.wlp4s0.useDHCP = true;
+    interfaces.wwp0s20f0u6i12.useDHCP = true;
 
-  # The global useDHCP flag is deprecated, therefore explicitly set to false here.
-  # Per-interface useDHCP will be mandatory in the future, so this generated config
-  # replicates the default behaviour.
-  networking.useDHCP = false;
-  networking.interfaces.enp0s31f6.useDHCP = true;
-  networking.interfaces.wlp4s0.useDHCP = true;
-  networking.interfaces.wwp0s20f0u6i12.useDHCP = true;
+    networkmanager.enable = true;
+  };
 
   # Select internationalisation properties.
   # i18n = {
@@ -55,76 +61,81 @@
     zsh
   ];
 
+  programs = {
+    java.enable = true;
+    geary.enable = true;
+  };
 
-  networking.networkmanager.enable = true;
-  services.throttled.enable = true;
-
-  programs.java.enable = true;
   # Enable sound.
   sound.enable = true;
-  hardware.pulseaudio = {
-    enable = true;
-    extraModules = [ pkgs.pulseaudio-modules-bt ];
-    # this is the pulseaudio build with bluetooth support
-    package = pkgs.pulseaudioFull;
+  hardware = {
+    pulseaudio = {
+      enable = true;
+      extraModules = [ pkgs.pulseaudio-modules-bt ];
+      # this is the pulseaudio build with bluetooth support
+      package = pkgs.pulseaudioFull;
+    };
+    bluetooth.enable = true;
   };
-  hardware.bluetooth.enable = true;
-  services.blueman.enable = true;
 
+  services = {
+    blueman.enable = true;
+    gnome3.gnome-keyring.enable = true;
+    throttled.enable = true;
+    udisks2.enable = true;
+    earlyoom.enable = true;
+    xserver = {
+      enable = true;
+      layout = "gb,el";
+      xkbOptions = "ctrl:nocaps, grp:rctrl_toggle";
+      # Enable touchpad support.
+      libinput.enable = true;
+      windowManager.awesome.enable = true;
+      desktopManager.xterm.enable = false;
+    };
+  };
 
-  services.xserver.enable = true;
-  services.xserver.layout = "gb,el";
-  services.xserver.xkbOptions = "ctrl:nocaps, grp:rctrl_toggle";
-
-  # Enable touchpad support.
-  services.xserver.libinput.enable = true;
-
-  services.xserver.windowManager.awesome.enable = true;
-  services.xserver.desktopManager.xterm.enable = false;
-
-  environment.etc."xdg/gtk-3.0/settings.ini" =
-    {
-      text =
-        ''
+  environment = {
+    etc."xdg/gtk-3.0/settings.ini".text = ''
             [Settings]
             gtk-icon-theme-name=Arc
             gtk-theme-name=Arc
         '';
+    homeBinInPath = true;
+    variables = {
+      ALTERNATE_EDITOR = "";
+      EDITOR = "nvim";
+      PATH = "$HOME/go/bin";
+      # no idea why this is on by default
+      CGO_ENABLED = "0";
     };
-
-  environment.homeBinInPath = true;
-  environment.variables = {
-    ALTERNATE_EDITOR = "";
-    EDITOR = "nvim";
-    PATH = "$HOME/go/bin";
-    # no idea why this is on by default
-    CGO_ENABLED = "0";
   };
 
-  programs.geary.enable = true;
-  services.gnome3.gnome-keyring.enable = true;
-  users.users.rski = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "docker" ];
-    shell = pkgs.fish;
+  users = {
+    users = {
+        rski = {
+          isNormalUser = true;
+          extraGroups = [ "wheel" "networkmanager" "docker" ];
+          shell = pkgs.fish;
+        };
+        root.initialHashedPassword = "";
+    };
+    mutableUsers = true;
   };
-  users.mutableUsers = true;
-  nix.trustedUsers = [ "root" "rski" ];
 
-  nix.useSandbox = true;
+  nix = {
+    trustedUsers = [ "root" "rski" ];
+    useSandbox = true;
+    gc = {
+      automatic = true;
+      dates = "12:15";
+    };
+  };
+
   # This value determines the NixOS release with which your system is to be
   # compatible, in order to avoid breaking some software such as database
   # servers. You should change this only after NixOS release notes say you
   # should.
   system.stateVersion = "19.09"; # Did you read the comment?
-  users.users.root.initialHashedPassword = "";
-
-  nix.gc.automatic = true;
-  nix.gc.dates = "12:15";
-
-  services.udisks2.enable = true;
   virtualisation.docker.enable = true;
-  boot.supportedFilesystems = [ "ntfs" ];
-
-  services.earlyoom.enable = true;
 }
