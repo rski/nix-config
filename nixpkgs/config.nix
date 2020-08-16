@@ -1,9 +1,6 @@
-let
-  unstable = import (fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/8ae7f8c35998a857f57512ecb7f0fa318ca88463.tar.gz) {};
-in
 {
   allowUnfree = true;
-  packageOverrides = pkgs: with unstable; rec {
+  packageOverrides = pkgs: with pkgs; rec {
     _emacs = (pkgs.emacs.override { srcRepo = true; }).overrideAttrs(oldAttrs: {
       configureFlags = (oldAttrs.configureFlags or []) ++ [
         "--program-transform-name=s/^ctags/ctags.emacs/"
@@ -47,6 +44,7 @@ in
         gcc
         go
         groovy
+        nodejs-14_x
 
         mypy
         python27Packages.pylint

@@ -4,9 +4,6 @@
 
 { config, pkgs, ... }:
 
-let
-  unstable = import (fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/a06fda4c5d9d13b3aa7245ae885b2047482ecf4f.tar.gz) {};
-in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -109,7 +106,7 @@ in
   users.users.rski = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "docker" ];
-    shell = unstable.fish;
+    shell = pkgs.fish;
   };
   users.mutableUsers = true;
   nix.trustedUsers = [ "root" "rski" ];
