@@ -64,8 +64,10 @@ in
         bandwhich
         bat
         colordiff
+        entr
         fd
         fzf
+        file
         git
         gnumake
         htop
