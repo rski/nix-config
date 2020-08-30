@@ -61,7 +61,10 @@
     zsh
   ];
 
-  programs.java.enable = true;
+  programs = {
+    java.enable = true;
+    light.enable = true;
+  };
 
   # Enable sound.
   sound.enable = true;
@@ -112,7 +115,7 @@
     users = {
         rski = {
           isNormalUser = true;
-          extraGroups = [ "wheel" "networkmanager" "docker" ];
+          extraGroups = [ "wheel" "networkmanager" "docker" "video" ];
           shell = pkgs.fish;
         };
         root.initialHashedPassword = "";
