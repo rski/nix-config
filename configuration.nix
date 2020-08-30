@@ -108,6 +108,9 @@
       PATH = "$HOME/go/bin";
       # no idea why this is on by default
       CGO_ENABLED = "0";
+      # i can turn it off when needed
+      GO111MODULE = "on";
+      GOPATH = "$HOME";
     };
   };
 
