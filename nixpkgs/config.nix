@@ -60,6 +60,7 @@
         ispell
         jq
         keychain
+        kitty
         kubectl
         loc
         lsof
@@ -91,6 +92,7 @@
         cbatticon
         clementine
         discord
+        fira-code
         firefox
         gimp
         gnome3.cheese
