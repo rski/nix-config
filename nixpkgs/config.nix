@@ -1,21 +1,6 @@
 {
   allowUnfree = true;
   packageOverrides = pkgs: with pkgs; rec {
-    _emacs = (pkgs.emacs.override { srcRepo = true; }).overrideAttrs(oldAttrs: {
-      configureFlags = (oldAttrs.configureFlags or []) ++ [
-        "--program-transform-name=s/^ctags/ctags.emacs/"
-      ];
-      buildInputs = oldAttrs.buildInputs ++ [
-        jansson harfbuzz git
-      ];
-      srcRepo = true;
-      src = fetchGit {
-        url = "https://github.com/emacs-mirror/emacs";
-        ref = "emacs-27.1";
-      };
-      patches = [];
-      postPatch = "";
-    });
     all = pkgs.buildEnv {
       name = "all";
       paths = [
@@ -92,14 +77,9 @@
     editors = pkgs.buildEnv {
       name = "editors";
       paths = [
+        emacs
         vim
         neovim
-      ];
-    };
-    myemacs = pkgs.buildEnv {
-      name = "myemacs";
-      paths = [
-        _emacs
       ];
     };
     de = pkgs.buildEnv {
