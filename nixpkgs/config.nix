@@ -26,6 +26,7 @@
       paths = [
         maven3
         clang-tools
+        gdb
         gcc
         go
         groovy
@@ -52,6 +53,7 @@
         fzf
         file
         git
+        git-review
         gnumake
         htop
         hunspell
@@ -69,8 +71,10 @@
         openssl
         protobuf
         ripgrep
+        rsync
         shellcheck
         sysstat
+        tmux
         tree
         unzip
       ];
