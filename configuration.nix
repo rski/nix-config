@@ -38,7 +38,7 @@
   # };
 
   # Set your time zone.
-  time.timeZone = "Europe/Dublin";
+  time.timeZone = "Europe/Athens";
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
