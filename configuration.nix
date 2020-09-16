@@ -8,7 +8,7 @@
   # Include the results of the hardware scan.
   imports = [ ./hardware-configuration.nix ];
 
-  boot= { 
+  boot = {
     # Use the systemd-boot EFI boot loader.
     loader = {
       systemd-boot.enable = true;
@@ -18,7 +18,7 @@
   };
 
   networking = {
-    hostName ="belauensis";
+    hostName = "belauensis";
     # The global useDHCP flag is deprecated, therefore explicitly set to false here.
     # Per-interface useDHCP will be mandatory in the future, so this generated config
     # replicates the default behaviour.
@@ -99,10 +99,10 @@
 
   environment = {
     etc."xdg/gtk-3.0/settings.ini".text = ''
-            [Settings]
-            gtk-icon-theme-name=Arc
-            gtk-theme-name=Arc
-        '';
+      [Settings]
+      gtk-icon-theme-name=Arc
+      gtk-theme-name=Arc
+    '';
     homeBinInPath = true;
     variables = {
       ALTERNATE_EDITOR = "";
@@ -118,12 +118,12 @@
 
   users = {
     users = {
-        rski = {
-          isNormalUser = true;
-          extraGroups = [ "wheel" "networkmanager" "docker" "video" ];
-          shell = pkgs.fish;
-        };
-        root.initialHashedPassword = "";
+      rski = {
+        isNormalUser = true;
+        extraGroups = [ "wheel" "networkmanager" "docker" "video" "lp" ];
+        shell = pkgs.fish;
+      };
+      root.initialHashedPassword = "";
     };
     mutableUsers = true;
   };
