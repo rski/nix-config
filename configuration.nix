@@ -79,6 +79,8 @@
   };
 
   services = {
+    printing.enable = true;
+    printing.drivers = [ pkgs.gutenprint pkgs.gutenprintBin ];
     blueman.enable = true;
     gnome3.gnome-keyring.enable = true;
     throttled.enable = true;
