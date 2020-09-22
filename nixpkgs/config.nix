@@ -113,7 +113,7 @@
         scrot
         spotify
         tdesktop
-        thunderbird
+        thunderbird-bin-78
         vlc
         zathura
       ];
