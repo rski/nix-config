@@ -49,6 +49,7 @@
         bat
         colordiff
         entr
+        exa
         fd
         fzf
         file
@@ -70,6 +71,7 @@
         multimarkdown
         openssl
         protobuf
+        pv
         ripgrep
         rsync
         shellcheck
