@@ -131,10 +131,6 @@
   nix = {
     trustedUsers = [ "root" "rski" ];
     useSandbox = true;
-    gc = {
-      automatic = true;
-      dates = "12:15";
-    };
   };
 
   # This value determines the NixOS release with which your system is to be
