@@ -9,12 +9,12 @@
         jansson harfbuzz git
       ];
       srcRepo = true;
+      nativeComp = true;
       src = fetchGit {
         url = "https://github.com/emacs-mirror/emacs";
-        ref = "emacs-27.1";
+        ref = "feature/native-comp";
       };
       patches = [];
-      postPatch = "";
     });
     all = pkgs.buildEnv {
       name = "all";
