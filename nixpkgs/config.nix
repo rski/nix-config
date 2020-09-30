@@ -130,6 +130,7 @@
         pasystray
         pavucontrol
         pcmanfm
+        playerctl
         picom
         screenkey
         scrot
