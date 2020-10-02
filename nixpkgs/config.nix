@@ -16,6 +16,14 @@
       };
       patches = [];
     });
+    _mygopls = buildGoModule rec {
+      pname = "gopls";
+      version = "v0.5.1-pre3";
+      src = fetchgit { rev = "gopls/v${version}"; url = "https://go.googlesource.com/tools"; sha256 = "150jg1qmdszfvh1x5fagawgc24xy19xjg9y1hq3drwy7lfdnahmq"; };
+      modRoot = "gopls";
+      vendorSha256 = "1s3d4hnbw0mab7njck79qmgkjn87vs4ffk44zk2qdrzqjjlqq5iv";
+      doCheck = false;
+    };
     all = pkgs.buildEnv {
       name = "all";
       paths = [
@@ -102,6 +110,10 @@
         vim
         neovim
       ];
+    };
+    mygopls = pkgs.buildEnv { 
+      name = "mygopls";
+      paths = [ _mygopls ];
     };
     myemacs = pkgs.buildEnv {
       name = "myemacs";
