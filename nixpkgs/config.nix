@@ -1,12 +1,14 @@
 {
   allowUnfree = true;
   packageOverrides = pkgs: with pkgs; rec {
-    _emacs = (pkgs.emacs.override { srcRepo = true; }).overrideAttrs(oldAttrs: {
-      configureFlags = (oldAttrs.configureFlags or []) ++ [
+    _emacs = (pkgs.emacs.override { srcRepo = true; }).overrideAttrs (oldAttrs: {
+      configureFlags = (oldAttrs.configureFlags or [ ]) ++ [
         "--program-transform-name=s/^ctags/ctags.emacs/"
       ];
       buildInputs = oldAttrs.buildInputs ++ [
-        jansson harfbuzz git
+        jansson
+        harfbuzz
+        git
       ];
       srcRepo = true;
       nativeComp = true;
@@ -14,7 +16,7 @@
         url = "https://github.com/emacs-mirror/emacs";
         ref = "feature/native-comp";
       };
-      patches = [];
+      patches = [ ];
     });
     _mygopls = buildGoModule rec {
       pname = "gopls";
