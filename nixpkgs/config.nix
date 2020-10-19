@@ -133,7 +133,6 @@
         clementine
         discord
         fira-code
-        firefox
         gimp
         gnome3.cheese
         gnome3.eog

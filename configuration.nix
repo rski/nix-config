@@ -43,9 +43,11 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.firefox.enablePlasmaBrowserIntegration = true;
   environment.systemPackages = with pkgs; [
     alacritty
     desktop_file_utils
+    firefox
     gnupg
     google-chrome
     graphviz
@@ -94,6 +96,7 @@
       libinput.enable = true;
       windowManager.awesome.enable = true;
       desktopManager.xterm.enable = false;
+      desktopManager.plasma5.enable = true;
     };
   };
 
