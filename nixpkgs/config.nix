@@ -111,6 +111,7 @@
       paths = [
         vim
         neovim
+        mygopls
       ];
     };
     mygopls = pkgs.buildEnv { 
