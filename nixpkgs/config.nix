@@ -20,7 +20,7 @@
     });
     _mygopls = buildGoModule rec {
       pname = "gopls";
-      version = "v0.5.1";
+      version = "v0.5.2";
       src = fetchgit { rev = "gopls/v${version}"; url = "https://go.googlesource.com/tools"; sha256 = "150jg1qmdszfvh1x5fagawgc24xy19xjg9y1hq3drwy7lfdnahmq"; };
       modRoot = "gopls";
       vendorSha256 = "1s3d4hnbw0mab7njck79qmgkjn87vs4ffk44zk2qdrzqjjlqq5iv";
@@ -164,7 +164,7 @@
         scrot
         spotify
         tdesktop
-        thunderbird-bin-78
+        thunderbird-78
         vlc
         zathura
       ];
