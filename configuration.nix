@@ -26,7 +26,11 @@
     interfaces.enp0s31f6.useDHCP = true;
     interfaces.wlp4s0.useDHCP = true;
     interfaces.wwp0s20f0u6i12.useDHCP = true;
-
+    firewall = {
+      enable = true;
+      allowedTCPPortRanges = [ { from = 4000; to = 4007; } ];
+      allowedUDPPortRanges = [ { from = 4000; to = 4007; } ];
+    };
     networkmanager.enable = true;
   };
 
