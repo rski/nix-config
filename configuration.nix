@@ -28,8 +28,8 @@
     interfaces.wwp0s20f0u6i12.useDHCP = true;
     firewall = {
       enable = true;
-      allowedTCPPortRanges = [ { from = 4000; to = 4007; } ];
-      allowedUDPPortRanges = [ { from = 4000; to = 4007; } ];
+      allowedTCPPortRanges = [ { from = 1714; to = 1764; } ];
+      allowedUDPPortRanges = [ { from = 1714; to = 1764; } ];
     };
     networkmanager.enable = true;
   };
