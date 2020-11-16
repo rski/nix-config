@@ -52,6 +52,7 @@
     alacritty
     desktop_file_utils
     firefox
+    kdeconnect
     gnupg
     google-chrome
     graphviz
