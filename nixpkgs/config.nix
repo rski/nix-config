@@ -42,6 +42,7 @@
         proglangs
         tools
         editors
+        lsp
         de
       ];
     };
@@ -64,17 +65,18 @@
         gcc
         go
         groovy
-        nodejs-14_x
 
         mypy
         python27Packages.pylint
         python2
         python3
-        python-language-server
 
         cargo
-        rust-analyzer
       ];
+    };
+    lsp = pkgs.buildEnv {
+      name = "lsp";
+      paths= [python-language-server rust-analyzer];
     };
     tools = pkgs.buildEnv {
       name = "tools";
