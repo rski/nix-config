@@ -19,11 +19,16 @@
       patches = [ ];
     });
     _mygopls = buildGoModule rec {
-      pname = "gopls";
+      pname = "_gopls";
       version = "v0.5.3";
-      src = fetchgit { rev = "gopls/v${version}"; url = "https://go.googlesource.com/tools"; sha256 = "150jg1qmdszfvh1x5fagawgc24xy19xjg9y1hq3drwy7lfdnahmq"; };
+      src = fetchgit {
+        rev = "gopls/${version}";
+        url = "https://go.googlesource.com/tools";
+        sha256 = "04dkrvk5190kyfa9swxpl0m3xq9g90qp8j7yxhi87wyb8giqbll2";
+      };
       modRoot = "gopls";
-      vendorSha256 = "1s3d4hnbw0mab7njck79qmgkjn87vs4ffk44zk2qdrzqjjlqq5iv";
+      subPackages = [ "." ];
+      vendorSha256 = "0ml8n6qnq9nprn7kv138qy0i2q8qawzd0lhh3v2qw39j0aj5fb7z";
       doCheck = false;
     };
     _gnmi = buildGoModule rec {
@@ -126,11 +131,11 @@
         gnmi
       ];
     };
-    mygopls = pkgs.buildEnv { 
+    mygopls = pkgs.buildEnv {
       name = "mygopls";
       paths = [ _mygopls ];
     };
-    gnmi = pkgs.buildEnv { 
+    gnmi = pkgs.buildEnv {
       name = "gnmi";
       paths = [ _gnmi ];
     };
