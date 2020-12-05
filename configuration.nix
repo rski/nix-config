@@ -99,7 +99,6 @@
       xkbOptions = "ctrl:nocaps, grp:rctrl_toggle";
       # Enable touchpad support.
       libinput.enable = true;
-      windowManager.awesome.enable = true;
       desktopManager.xterm.enable = false;
       desktopManager.plasma5.enable = true;
     };
